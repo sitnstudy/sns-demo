@@ -65,4 +65,10 @@ test('reports the complete exercise lifecycle to the console', async ({ page }) 
     'question answered',
     'exercise ended'
   ]);
+  const snapshot = await page.evaluate(() => window.SNSExerciseInjection.getState());
+  expect(snapshot).toMatchObject({ started: true, ended: true });
+  expect(snapshot.answers).toHaveLength(4);
+  const sessionIds = [snapshot.startDetail, ...snapshot.answers, snapshot.endDetail]
+    .map(detail => detail?.sessionId);
+  expect(new Set(sessionIds).size).toBe(1);
 });
