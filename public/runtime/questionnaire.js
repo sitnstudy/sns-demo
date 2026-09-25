@@ -770,7 +770,7 @@ export function mountQuestionnaire(app, { title = 'Practice paper', questions, s
     const brand = node('div', 'paper-brand');
     brand.hidden = !title.trim();
     const logo = node('img', 'paper-brand-icon');
-    logo.src = new URL('../sns-demo-icon.svg', import.meta.url).href; logo.alt = ''; logo.width = 40; logo.height = 40;
+    logo.src = new URL('../quode-icon-192.png', import.meta.url).href; logo.alt = ''; logo.width = 40; logo.height = 40;
     const printHeading = node('header', 'paper-print-heading');
     const printLogo = logo.cloneNode(); printLogo.alt = 'PSAT';
     const printTitle = node('h1');
