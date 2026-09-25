@@ -8,7 +8,7 @@ export default function App() {
   if (complete) {
     return (
       <main className="completion-screen">
-        <img src="./icon-192.png" alt="" width="72" height="72" />
+        <img src="./sns-demo-icon.svg" alt="" width="72" height="72" />
         <p className="completion-kicker">SNS Demo</p>
         <h1>Demo complete</h1>
         <p>You completed all four questions.</p>

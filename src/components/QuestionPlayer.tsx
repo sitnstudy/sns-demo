@@ -22,7 +22,7 @@ export default function QuestionPlayer({ onComplete }: { onComplete: () => void 
         questions,
         search: '?mode=learn&answer-mode=typed',
         layoutControls: true,
-        questionLabels: ['Q1', 'Q5', 'Q6', 'Q13'],
+        questionLabels: ['1', '2', '3', '4'],
         allowTryAnother: false,
         onComplete
       });

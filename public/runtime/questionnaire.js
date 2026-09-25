@@ -770,22 +770,20 @@ export function mountQuestionnaire(app, { title = 'Practice paper', questions, s
     const brand = node('div', 'paper-brand');
     brand.hidden = !title.trim();
     const logo = node('img', 'paper-brand-icon');
-    logo.src = new URL('./psat-icon-192.png?v=2', import.meta.url).href; logo.alt = ''; logo.width = 32; logo.height = 32;
+    logo.src = new URL('../sns-demo-icon.svg', import.meta.url).href; logo.alt = ''; logo.width = 40; logo.height = 40;
     const printHeading = node('header', 'paper-print-heading');
     const printLogo = logo.cloneNode(); printLogo.alt = 'PSAT';
     const printTitle = node('h1');
     printHeading.append(printLogo, printTitle);
     heading.after(printHeading);
-    const homeLink = node('a', 'paper-home-link');
-    homeLink.href = new URL('../', import.meta.url).href;
-    homeLink.setAttribute('aria-label', 'Back to PSAT landing page');
-    homeLink.title = 'Back to PSAT landing page';
-    homeLink.append(logo);
+    const brandMark = node('span', 'paper-home-link');
+    brandMark.setAttribute('aria-hidden', 'true');
+    brandMark.append(logo);
     const titleNode = heading.querySelector('h1');
     titleNode.textContent = shortTitle;
     titleNode.append(node('span', 'paper-title-detail', title.startsWith(shortTitle) ? title.slice(shortTitle.length) : ` · ${title}`));
     titleNode.setAttribute('aria-label', title);
-    brand.append(homeLink, titleNode); heading.prepend(brand);
+    brand.append(brandMark, titleNode); heading.prepend(brand);
     for (const control of headingActions.children) {
       const label = control.textContent;
       control.setAttribute('aria-label', label); control.title = label;

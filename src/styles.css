@@ -16,6 +16,7 @@ html, body, #root { min-height: 100%; margin: 0; }
 body { min-width: 320px; }
 
 .paper-number { min-width: 2.7rem; }
+.paper-home-link { cursor: default; pointer-events: none; }
 
 .completion-screen {
   min-height: 100vh;
