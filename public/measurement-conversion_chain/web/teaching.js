@@ -41,7 +41,9 @@ export function mountTeaching(question,root) {
   const dispose=()=>{keypadAlignment?.disconnect();keypadAlignment=undefined;editor?.close();editor=undefined;};
   const button=(text,action)=>{const n=el('button','paper-button',text);n.type='button';n.onclick=action;return n;};
   const close=()=>root.dispatchEvent(new CustomEvent('teaching-close',{bubbles:true,detail:{focusAnswer:false}}));
-  const hint=i=>`1 ${singular(d.units[i])} = ${d.factors[i]} ${d.units[i+1]}, so ${d.totals[i].toLocaleString()} ${d.units[i]} are how many ${d.units[i+1]}?`;
+  const hint=i=>d.compactRibbon
+    ? `Each pack contains ${d.factors[i]} strips, so ${d.totals[i].toLocaleString()} packs contain how many metres of ribbon?`
+    : `1 ${singular(d.units[i])} = ${d.factors[i]} ${d.units[i+1]}, so ${d.totals[i].toLocaleString()} ${d.units[i]} are how many ${d.units[i+1]}?`;
   function wall(target,count) {
     const figure=el('figure','chain-wall');figure.setAttribute('aria-label','One brick per unit in each layer');
     for(let i=d.factors.length;i>=0;i--) {

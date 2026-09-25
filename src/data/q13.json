@@ -3,30 +3,24 @@
   "questions": [
     {
       "category": "multiply_conversion_chain",
-      "question": "There are 2 packs of ribbon. Each pack contains 2 strips. Each strip is 4 m long. What is the total length of ribbon in m?",
+      "question": "There are 2 packs of ribbon. Each pack contains 2 strips. What is the total length of ribbon in m?",
       "questionFormat": "text",
-      "answer": "16",
-      "example": "24",
+      "answer": "4",
+      "example": "6",
       "template": "{example}\\text{ m}",
       "steps": [
         {
-          "intent": "Convert to strips",
-          "hint": "Multiply 2 by 2 to find the number of strips.",
-          "result": "2 \\times 2 = 4\\text{ strips}",
-          "example": "3 \\times 2 = 6\\text{ strips}"
-        },
-        {
           "intent": "Convert to m",
-          "hint": "Multiply 4 by 4 to find the number of m.",
-          "result": "4 \\times 4 = 16\\text{ m}",
-          "example": "6 \\times 4 = 24\\text{ m}"
+          "hint": "Multiply 2 by 2 to find the total length in m.",
+          "result": "2 \\times 2 = 4\\text{ m}",
+          "example": "3 \\times 2 = 6\\text{ m}"
         }
       ],
       "choices": [
-        "16",
         "4",
-        "20",
-        "18"
+        "2",
+        "6",
+        "8"
       ],
       "correctChoice": 0,
       "tags": [
@@ -40,28 +34,26 @@
         "formatVersion": 1,
         "quode": "measurement-conversion_chain",
         "generatorVersion": "1.0",
-        "question": "There are 2 packs of ribbon. Each pack contains 2 strips. Each strip is 4 m long. What is the total length of ribbon in m?",
+        "question": "There are 2 packs of ribbon. Each pack contains 2 strips. What is the total length of ribbon in m?",
         "questionFormat": "text",
-        "math": "2 * 2 * 4",
+        "math": "2 * 2",
         "data": {
           "amount": 2,
           "factors": [
-            2,
-            4
+            2
           ],
           "units": [
             "packs",
-            "strips",
             "m"
           ],
           "wording": 3
         },
         "difficulty": "low",
         "choices": [
-          "16",
           "4",
-          "20",
-          "18"
+          "2",
+          "6",
+          "8"
         ],
         "tags": [
           "measurement",
@@ -79,20 +71,18 @@
         "submissionMode": false,
         "amount": 2,
         "factors": [
-          2,
-          4
+          2
         ],
         "units": [
           "packs",
-          "strips",
           "m"
         ],
         "wording": 3,
         "totals": [
           2,
-          4,
-          16
+          4
         ],
+        "compactRibbon": true,
         "showBricks": true,
         "copy": {
           "check": "Check",

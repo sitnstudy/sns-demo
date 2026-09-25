@@ -3,7 +3,7 @@
   "questions": [
     {
       "category": "percentage_of_quantity",
-      "question": "A middle school has 50 students enrolled in after-school clubs. If 20% of those students participate in the robotics club, how many students participate in robotics?",
+      "question": "What is 20% of 50?",
       "answer": "10",
       "example": "11",
       "template": "{example}",
@@ -46,13 +46,13 @@
         "formatVersion": 1,
         "quode": "arithmetic-percentage_of_quantity",
         "generatorVersion": "1.2",
-        "question": "A middle school has 50 students enrolled in after-school clubs. If 20% of those students participate in the robotics club, how many students participate in robotics?",
+        "question": "What is 20% of 50?",
         "questionFormat": "text",
         "data": {
           "total": 50,
           "percent": "20",
           "level": 1,
-          "template": "school_club"
+          "template": "direct"
         },
         "choices": [
           "100",
@@ -107,7 +107,7 @@
           "step": "1",
           "level": 1,
           "mode": "guided",
-          "unit": "students"
+          "unit": "units"
         },
         "levels": [
           {

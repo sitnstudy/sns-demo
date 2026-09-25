@@ -32,6 +32,28 @@ test('loads every fixed question and its help experience', async ({ page, isMobi
   }
 });
 
+test('uses the shortened questions and matching help data', async ({ page }) => {
+  await page.goto('/');
+
+  await page.getByRole('button', { name: 'Go to question 3', exact: true }).click();
+  await expect(page.locator('.paper-question:visible .paper-prompt')).toHaveText('What is 20% of 50?');
+  await page.getByRole('button', { name: 'Help Me' }).click();
+  await expect(page.locator('.paper-question:visible .pc-brick')).toHaveCount(50);
+  await page.locator('.paper-question:visible .paper-teach-host').dispatchEvent('teaching-close');
+
+  await page.getByRole('button', { name: 'Go to question 4', exact: true }).click();
+  await expect(page.locator('.paper-question:visible .paper-prompt')).toHaveText(
+    'There are 2 packs of ribbon. Each pack contains 2 strips. What is the total length of ribbon in m?'
+  );
+  await page.getByRole('button', { name: 'Help Me' }).click();
+  await expect(page.locator('.paper-question:visible .chain-rule')).toContainText('Each pack contains 2 strips');
+  await expect(page.locator('.paper-question:visible .chain-help input[type="hidden"]')).toHaveAttribute(
+    'data-expected-answer',
+    '4'
+  );
+  await expect(page.locator('.paper-question:visible .chain-rule')).not.toContainText('4 m long');
+});
+
 test('reports the complete exercise lifecycle to the console', async ({ page }) => {
   const lifecycle: string[] = [];
   page.on('console', message => {
@@ -43,7 +65,7 @@ test('reports the complete exercise lifecycle to the console', async ({ page }) 
   await page.goto('/');
   await expect.poll(() => lifecycle).toEqual(['exercise started']);
 
-  for (const [index, answer] of ['2', '36', '10', '16'].entries()) {
+  for (const [index, answer] of ['2', '36', '10', '4'].entries()) {
     const input = page.locator('.paper-question:visible .paper-answer-panel input[type="hidden"]').first();
     await input.evaluate((element: HTMLInputElement, value) => {
       element.value = String(value);
