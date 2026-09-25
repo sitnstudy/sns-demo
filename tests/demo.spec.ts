@@ -31,3 +31,38 @@ test('loads every fixed question and its help experience', async ({ page, isMobi
     await expect(activeHelp).toBeHidden();
   }
 });
+
+test('reports the complete exercise lifecycle to the console', async ({ page }) => {
+  const lifecycle: string[] = [];
+  page.on('console', message => {
+    if (['exercise started', 'question answered', 'exercise ended'].includes(message.text())) {
+      lifecycle.push(message.text());
+    }
+  });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  await expect.poll(() => lifecycle).toEqual(['exercise started']);
+
+  for (const [index, answer] of ['2', '36', '10', '16'].entries()) {
+    const input = page.locator('.paper-question:visible .paper-answer-panel input[type="hidden"]').first();
+    await input.evaluate((element: HTMLInputElement, value) => {
+      element.value = String(value);
+      element.dispatchEvent(new Event('input', { bubbles: true }));
+    }, answer);
+    await page.getByRole('button', { name: 'Check answer' }).click();
+    await expect.poll(() => lifecycle.filter(message => message === 'question answered').length).toBe(index + 1);
+    const action = page.getByRole('button', { name: index === 3 ? 'Finish' : 'Next Question' });
+    await expect(action).toBeEnabled();
+    await action.click();
+  }
+
+  await expect(page.getByRole('heading', { name: 'Demo complete' })).toBeVisible();
+  expect(lifecycle).toEqual([
+    'exercise started',
+    'question answered',
+    'question answered',
+    'question answered',
+    'question answered',
+    'exercise ended'
+  ]);
+});

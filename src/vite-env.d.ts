@@ -6,3 +6,11 @@ declare module '/runtime/questionnaire.js' {
     ready: Promise<unknown>;
   };
 }
+
+interface Window {
+  SNSExerciseInjection: {
+    exerciseStarted(detail?: Record<string, unknown>): void;
+    questionAnswered(detail?: Record<string, unknown>): void;
+    exerciseEnded(detail?: Record<string, unknown>): void;
+  };
+}

@@ -13,7 +13,7 @@ export default function QuestionPlayer({ onComplete }: { onComplete: () => void 
     let mounted = true;
     let player: { destroy(): void } | undefined;
 
-    const runtimeUrl = new URL('runtime/questionnaire.js?v=2', document.baseURI).href;
+    const runtimeUrl = new URL('runtime/questionnaire.js?v=3', document.baseURI).href;
     import(/* @vite-ignore */ runtimeUrl).then(({ mountQuestionnaire }) => {
       if (!mounted || !host.current) return;
       player = mountQuestionnaire(host.current, {
@@ -24,7 +24,24 @@ export default function QuestionPlayer({ onComplete }: { onComplete: () => void 
         layoutControls: true,
         questionLabels: ['1', '2', '3', '4'],
         allowTryAnother: false,
-        onComplete
+        onQuestionAnswered: ({ index }: { index: number }) => {
+          window.SNSExerciseInjection.questionAnswered({
+            exerciseId: 'sns-demo',
+            questionId: index + 1,
+            index
+          });
+        },
+        onComplete: () => {
+          window.SNSExerciseInjection.exerciseEnded({
+            exerciseId: 'sns-demo',
+            questionCount: questions.length
+          });
+          onComplete();
+        }
+      });
+      window.SNSExerciseInjection.exerciseStarted({
+        exerciseId: 'sns-demo',
+        questionCount: questions.length
       });
     });
 

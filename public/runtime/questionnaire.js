@@ -115,7 +115,7 @@ function confirmDifficulty(direction) {
 }
 export function mountQuestionnaire(app, { title = 'Practice paper', questions, search = window.location.search,
   answersEquivalent = defaultEquivalent, instruction = '', layoutControls = false, shortTitle = 'PSAT', changeDifficulty,
-  tryAnother, questionLabels = [], allowTryAnother = true, onComplete } = {}) {
+  tryAnother, questionLabels = [], allowTryAnother = true, onQuestionAnswered, onComplete } = {}) {
   const generatedSessions = new Set();
   const generateAnother = tryAnother || (async question => {
     const quode = question.portableQuestion?.quode;
@@ -236,6 +236,10 @@ export function mountQuestionnaire(app, { title = 'Practice paper', questions, s
     state.editor?.close();
     state.checked = true;
     state.correct = state.mode === 'multiple-choice' ? state.value === state.question.choices[state.question.correctChoice ?? state.question.choices.indexOf(state.question.answer)] : answersEquivalent(state.question.answer, state.value);
+    if (state.correct && !state.answerReported) {
+      state.answerReported = true;
+      onQuestionAnswered?.({ question:state.question, index:states.indexOf(state), answer:state.value });
+    }
     clearTimeout(state.feedbackTimer);
     state.feedback.textContent = '';
     if (!state.correct) {
