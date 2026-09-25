@@ -1,0 +1,47 @@
+@font-face {
+  font-family: Roboto;
+  src: url('/runtime/fonts/Roboto.ttf') format('truetype');
+  font-display: swap;
+}
+
+:root {
+  font-family: Roboto, Arial, sans-serif;
+  color: #183b56;
+  background: #f5f8fa;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; margin: 0; }
+body { min-width: 320px; }
+
+.paper-number { min-width: 2.7rem; }
+
+.completion-screen {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: .7rem;
+  padding: 2rem;
+  text-align: center;
+  background: #fff;
+}
+
+.completion-screen img { border-radius: 20%; }
+.completion-screen h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.4rem); }
+.completion-screen p { margin: 0; color: #526d82; font-size: 1.1rem; }
+.completion-screen .completion-kicker { color: #008c95; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.completion-screen button {
+  margin-top: 1rem;
+  border: 0;
+  border-radius: .65rem;
+  padding: .9rem 1.2rem;
+  color: white;
+  background: #008c95;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.completion-screen button:hover { background: #00727a; }
+.completion-screen button:focus-visible { outline: 3px solid #ffcc4d; outline-offset: 3px; }

@@ -1,0 +1,285 @@
+{
+  "strategy": "Identify the units, choose the conversion factor in the correct direction, then multiply or divide to express the same measurement in the requested unit.",
+  "questions": [
+    {
+      "category": "conversion_grouping",
+      "question": "6 items = ______ groups of 3\n(1 group of 3 = 3 items)",
+      "answer": "2",
+      "teaching": {
+        "common": {
+          "workbookTitle": "Workbook",
+          "answerTitle": "Worked solution",
+          "stepLabel": "Step {step}",
+          "examplePrefix": "eg: ",
+          "missingNumber": "Missing number",
+          "correct": "Correct",
+          "tryAgain": "Try again.",
+          "blockSingular": "block",
+          "blockPlural": "blocks"
+        },
+        "worked": {
+          "label": "Build equal blocks",
+          "knownRule": "We know that 1 {large_abbreviation} is equal to {factor} {small_abbreviation}",
+          "hint": "{small_amount} will make 1 {large}. How many such {block} blocks would you need to collect to make {target_amount}?",
+          "conclusion": "Hence, you need to collect {count} {block} {block_units} to make {target_amount}.",
+          "blankLabel": "Number of blocks: blank",
+          "equation": "{factor} \u00d7 {count} = {target}",
+          "answer": "That makes {count} {large_units}.",
+          "example": "Example: {example_count} {block} blocks make {example_total} {example_small_units} ({example_count} {example_large_units})."
+        },
+        "interactive": {
+          "target": "Stack up to reach {target_amount}.",
+          "add": "Add one {large}",
+          "remove": "Remove one {large}",
+          "answerLabel": "{factor} times what equals {target}?",
+          "inputLabel": "Missing number: {factor} times what equals {target}",
+          "equation": "{count} {large_units} = {total} {small_units}",
+          "challenge": "{factor} \u00d7 {count} = {target}",
+          "stackLabel": "{count} {large_units}, {total} {small_units}",
+          "moreBlocks": "{count} more {large_units} below",
+          "tooMany": "This exact question needs more than 20 bricks. Use a new practice question for the stacking simulation.",
+          "unavailable": "A stacking simulation is not available for this question."
+        },
+        "units": {
+          "foot": {
+            "singular": "ft",
+            "plural": "ft",
+            "abbreviation": "ft"
+          },
+          "inch": {
+            "singular": "in",
+            "plural": "in",
+            "abbreviation": "in"
+          },
+          "yard": {
+            "singular": "yd",
+            "plural": "yd",
+            "abbreviation": "yd"
+          },
+          "metre": {
+            "singular": "m",
+            "plural": "m",
+            "abbreviation": "m"
+          },
+          "centimetre": {
+            "singular": "cm",
+            "plural": "cm",
+            "abbreviation": "cm"
+          },
+          "kilometre": {
+            "singular": "km",
+            "plural": "km",
+            "abbreviation": "km"
+          },
+          "kilogram": {
+            "singular": "kg",
+            "plural": "kg",
+            "abbreviation": "kg"
+          },
+          "gram": {
+            "singular": "g",
+            "plural": "g",
+            "abbreviation": "g"
+          },
+          "pound": {
+            "singular": "lb",
+            "plural": "lb",
+            "abbreviation": "lb"
+          },
+          "ounce": {
+            "singular": "oz",
+            "plural": "oz",
+            "abbreviation": "oz"
+          },
+          "hour": {
+            "singular": "h",
+            "plural": "h",
+            "abbreviation": "h"
+          },
+          "minute": {
+            "singular": "min",
+            "plural": "min",
+            "abbreviation": "min"
+          },
+          "second": {
+            "singular": "s",
+            "plural": "s",
+            "abbreviation": "s"
+          },
+          "litre": {
+            "singular": "L",
+            "plural": "L",
+            "abbreviation": "L"
+          },
+          "millilitre": {
+            "singular": "mL",
+            "plural": "mL",
+            "abbreviation": "mL"
+          },
+          "dollar": {
+            "singular": "$",
+            "plural": "$",
+            "abbreviation": "$"
+          },
+          "cent": {
+            "singular": "\u00a2",
+            "plural": "\u00a2",
+            "abbreviation": "\u00a2"
+          },
+          "two-dollar-coin": {
+            "singular": "$2 coin",
+            "plural": "$2 coins",
+            "abbreviation": "$2 coin"
+          },
+          "five-cent-coin": {
+            "singular": "5\u00a2 coin",
+            "plural": "5\u00a2 coins",
+            "abbreviation": "5\u00a2 coin"
+          },
+          "two-square-metre-patch": {
+            "singular": "2m\u00b2 patch",
+            "plural": "2m\u00b2 patches",
+            "abbreviation": "2m\u00b2 patch"
+          },
+          "square-metre": {
+            "singular": "m\u00b2",
+            "plural": "m\u00b2",
+            "abbreviation": "m\u00b2"
+          },
+          "pair": {
+            "singular": "pair",
+            "plural": "pairs",
+            "abbreviation": "pair"
+          },
+          "triple": {
+            "singular": "group of 3",
+            "plural": "groups of 3",
+            "abbreviation": "group of 3"
+          },
+          "item": {
+            "singular": "item",
+            "plural": "items",
+            "abbreviation": "item"
+          }
+        },
+        "strategyParts": [
+          {
+            "text": "Split "
+          },
+          {
+            "text": "6",
+            "role": "value"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "items",
+            "role": "text"
+          },
+          {
+            "text": " into blocks of "
+          },
+          {
+            "text": "3",
+            "role": "factor"
+          },
+          {
+            "text": " "
+          },
+          {
+            "text": "items",
+            "role": "text"
+          },
+          {
+            "text": ". How many blocks do you need?"
+          }
+        ],
+        "solutionRows": [
+          {
+            "expression": "1\\;\\text{group of 3} = 3\\;\\text{items}",
+            "intent": "Write the conversion rule.",
+            "hint": "One group of 3 contains 3 items."
+          },
+          {
+            "expression": "3\\;\\text{items} = 1\\;\\text{group of 3}",
+            "intent": "Read the rule in reverse.",
+            "hint": "Each block of 3 items makes one group of 3."
+          },
+          {
+            "expression": "3 \\times 2 = 6",
+            "intent": "Find how many blocks make the total.",
+            "hint": "3 \u00d7 2 = 6, so you need 2 blocks. The answer is 2 groups of 3."
+          }
+        ],
+        "difficulty": {
+          "level": "low",
+          "template": "missing-value"
+        }
+      },
+      "example": "1234567890123",
+      "template": "{example}",
+      "steps": [
+        {
+          "intent": "Identify the conversion factor.",
+          "hint": "Use 1 group of 3 = 3 items.",
+          "result": "3",
+          "example": "4"
+        },
+        {
+          "intent": "Choose multiplication or division.",
+          "hint": "Divide by 3 to convert items to groups of 3.",
+          "result": "6 \\div 3",
+          "example": "18 \\div 3"
+        },
+        {
+          "intent": "Calculate the measurement in the requested unit.",
+          "hint": "The result is measured in groups of 3.",
+          "result": "2",
+          "example": "6"
+        }
+      ],
+      "choices": [
+        "2",
+        "3",
+        "0.5",
+        "18"
+      ],
+      "tags": [],
+      "source": "",
+      "correctChoice": 0,
+      "questionFormat": "text",
+      "portableQuestion": {
+        "formatVersion": 1,
+        "quode": "measurement-unit_conversion",
+        "generatorVersion": "1.21",
+        "question": "6 items = ______ groups of 3\n(1 group of 3 = 3 items)",
+        "choices": [
+          "2",
+          "3",
+          "0.5",
+          "18"
+        ],
+        "tags": [],
+        "source": "",
+        "questionFormat": "text",
+        "recipe": {
+          "args": [
+            "--count",
+            "1",
+            "--difficulty",
+            "low",
+            "--seed",
+            "1"
+          ],
+          "index": 0
+        },
+        "data": {
+          "value": "6",
+          "from": "item",
+          "to": "triple"
+        }
+      }
+    }
+  ]
+}

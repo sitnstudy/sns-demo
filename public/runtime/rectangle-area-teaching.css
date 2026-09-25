@@ -1,0 +1,70 @@
+/* Keep question 1's Tetris well, glossy palette and mobile dock.
+   These rules only lay out area-specific square pieces and slab previews. */
+.area-tetris .area-tetris-game { align-items:center; }
+.area-tetris .area-tetris-equation { display:flex;flex-wrap:wrap;justify-content:center;gap:0 .15em;font-size:clamp(22px,2.5vw,34px); }
+.area-tetris .area-tetris-equation::before {display:none;}
+.area-tetris-instruction {font-weight:400;line-height:1.5;}
+.area-tetris-pieces {position:absolute;inset:0;overflow:hidden;}
+.area-tetris .area-tetris-well .area-tetris-piece {position:absolute;box-sizing:border-box;min-height:0;min-width:0;flex:none;margin:0;animation:none;}
+.area-tetris-piece.area-square {border-radius:2px;}
+.area-slab-grid {position:absolute;inset:0;display:grid;overflow:hidden;}
+.area-slab-unit,.area-sample-square {background:linear-gradient(180deg,#ffffff70,#ffffff15 45%,#00000012 48%,#00000038),var(--brick-colour);border-right:1px solid #ffffff60;border-top:1px solid #ffffff60;min-width:0;min-height:0;}
+.area-slab-label {position:relative;z-index:1;font-size:clamp(10px,1.4vw,16px);}
+.area-slab-preview {position:absolute;top:14px;left:8px;right:8px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;margin:0;font-size:14px;color:white;text-shadow:0 1px 2px #000;pointer-events:none;}
+.area-slab-preview:empty {display:none;}
+.area-slab-sample {display:grid;grid-template-columns:repeat(var(--sample-columns),1fr);max-width:95%;outline:2px solid #ffdf65;outline-offset:2px;border-radius:2px;}
+.area-bundle {position:absolute;bottom:0;box-sizing:border-box;outline:2px solid #ffdf65;outline-offset:-2px;border-radius:3px;box-shadow:0 0 14px #ffdf6590,inset 0 0 8px #ffdf6560;z-index:2;pointer-events:none;animation:area-bundle-lock .55s ease-out;}
+.area-bundle::after {content:"";position:absolute;inset:0;border:var(--bundle-stroke,3px) solid #ffdf65;border-radius:3px;z-index:3;}
+.area-tetris .area-slab {outline:1px solid #ffdf65;outline-offset:-1px;}
+@keyframes area-bundle-lock {from {transform:scale(1.12,1.6);opacity:0;}to {transform:scale(1);opacity:1;}}
+@media(prefers-reduced-motion:reduce){.area-bundle {animation:none;}}
+.area-sample-square {border-right:1px solid #ffffff70;}
+.area-tetris .area-status {font-weight:700;font-size:15px;line-height:1.4;min-height:1.4em;margin:12px 0 0;color:var(--psat-primary);}
+.area-tetris .conversion-buttons button svg {width:24px;height:24px;}
+.area-tetris .conversion-tetris-wordmark {z-index:0;}
+.area-tetris .conversion-height-label {white-space:nowrap;}
+.area-tetris .area-tetris-well[data-filled="true"]::after {content:"";position:absolute;left:-5px;right:-5px;top:-5px;height:5px;background:var(--psat-primary);}
+.area-tetris-replay {width:min(1050px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:20px;border:2px solid #183b56;border-radius:12px;box-sizing:border-box;overflow:auto;}
+.area-tetris-replay::backdrop {background:#10283b80;}
+.area-tetris-replay .area-tetris {margin:0;}
+.area-tetris-replay .area-tetris-game {min-height:420px;}
+.area-tetris-replay .conversion-audio-fab {display:grid!important;position:absolute;left:0;top:0;bottom:auto;}
+.area-tetris-replay .conversion-stop-button {display:grid!important;}
+@media screen and (max-width:650px) {
+ .area-tetris[data-guided-help="true"] .area-tetris-game[data-running="true"] {top:48px;bottom:calc(var(--conversion-controls-height,100px) + 12px);}
+ .area-tetris .conversion-stack-area {position:relative;}
+ .area-tetris .conversion-stack-area > .conversion-target {position:absolute;top:0;left:0;right:0;min-height:40px;padding:0 18px;font-size:17px;line-height:1.3;}
+ .area-tetris .area-tetris-stage {padding-top:54px;padding-bottom:14px;}
+ .area-tetris .conversion-controls {grid-template-columns:44px minmax(0,1fr) 44px;}
+ .area-tetris .area-tetris-instruction {grid-column:1/-1;grid-row:2;font-size:14px!important;margin:3px 0 0;}
+ .area-tetris .area-tetris-equation {grid-column:2;grid-row:1;font-size:clamp(16px,4.7vw,22px);}
+ .area-tetris .area-slab-preview {display:flex;}
+ .area-tetris .area-status {grid-column:1/-1;grid-row:3;margin:0;font-size:13px;}
+ .area-tetris .area-status:empty {display:none;}
+ .area-tetris-replay {inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;border-radius:0;}
+ .area-tetris[data-embedded="true"] {position:fixed;inset:0;}
+}
+@media print {.area-tetris-game,.area-tetris-replay,.area-tetris>.conversion-stop-button,.area-tetris>.conversion-audio-fab,.area-ready,.area-start {display:none!important;}}
+
+.area-tetris-well[role="button"] {cursor:pointer;touch-action:manipulation;}
+.area-tetris-well[role="button"]:focus-visible {outline:3px solid #1768c4;outline-offset:5px;}
+
+.area-tetris .area-tetris-instruction {position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:4;width:max-content;max-width:calc(100% - 12px);box-sizing:border-box;margin:0!important;padding:8px 12px;border-radius:999px;background:#a51c23;color:#fff;box-shadow:0 3px 14px #a51c2366;font:600 clamp(12px,1.3vw,16px)/1.25 Roboto,Arial,sans-serif!important;white-space:nowrap;pointer-events:none;}
+.area-tetris .area-tetris-instruction[hidden] {display:none;}
+@media screen and (max-width:650px) {
+ .area-tetris .conversion-controls.area-readiness-strip {display:flex;flex-direction:column;gap:0;box-sizing:border-box;overflow:hidden;padding:10px 12px calc(10px + env(safe-area-inset-bottom));z-index:1200;}
+ .area-tetris .area-ready {position:static!important;inset:auto!important;transform:none!important;width:100%!important;max-width:360px;margin:10px auto 0!important;box-sizing:border-box;}
+ .area-tetris .area-ready:not([open]) {display:none!important;}
+ .area-tetris .area-tetris-instruction {font-size:12px!important;}
+}
+/* The well has a 5px bottom border and no top border. */
+.area-tetris .area-tetris-instruction {top:calc(50% + 2.5px);}
+
+/* Readiness belongs to the activity controls, never to a floating dialog layer. */
+.area-tetris .area-ready {position:static;inset:auto;transform:none;width:100%;max-width:360px;margin:20px auto 0;padding:20px;border-radius:14px;font:600 18px/1.4 Roboto,Arial,sans-serif;text-align:center;}
+.area-tetris .area-ready:not([open]) {display:none;}
+.area-tetris .area-ready p {margin:0 0 14px;}
+.area-tetris .area-ready[open] {animation:area-ready-fade .25s ease-out both;}
+@keyframes area-ready-fade {from {opacity:0;}to {opacity:1;}}
+@media (prefers-reduced-motion:reduce) {.area-tetris .area-ready[open] {animation:none;}}
+@media screen and (max-width:650px) {.area-tetris .area-ready {padding:16px;}}

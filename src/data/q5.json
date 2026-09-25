@@ -1,0 +1,192 @@
+{
+  "strategy": "Count square units in one row, then multiply by the number of rows.",
+  "questions": [
+    {
+      "category": "square-area",
+      "question": "A square pink tabletop has a side length of 6 centimeters. What is its area, in square centimeters?",
+      "answer": "36",
+      "example": "37",
+      "template": "{example}\\text{ cm}^{2}",
+      "choices": [
+        "18",
+        "42",
+        "38",
+        "36"
+      ],
+      "correctChoice": 3,
+      "tags": [
+        "geometry",
+        "square-area"
+      ],
+      "source": "",
+      "questionFormat": "text",
+      "portableQuestion": {
+        "formatVersion": 1,
+        "quode": "geometry-rectangle_area",
+        "generatorVersion": "1.4",
+        "data": {
+          "category": "square-area",
+          "length": 6,
+          "width": 6,
+          "variant": 87
+        },
+        "difficulty": "low",
+        "question": "A square pink tabletop has a side length of 6 centimeters. What is its area, in square centimeters?",
+        "questionFormat": "text",
+        "choices": [
+          "18",
+          "42",
+          "38",
+          "36"
+        ],
+        "tags": [
+          "geometry",
+          "square-area"
+        ],
+        "source": ""
+      },
+      "steps": [
+        {
+          "intent": "\\text{First, let us find the area of one row}",
+          "hint": "\\text{Count one square centimeter for each centimeter along the row}",
+          "result": "1 \\times 6 = 6",
+          "example": "1 \\times 3 = 3"
+        },
+        {
+          "intent": "\\text{Now, let us cover every row}",
+          "hint": "\\text{Multiply the area of one row by the number of rows}",
+          "result": "6 \\times 6 = 36\\text{ cm}^{2}",
+          "example": "3 \\times 5 = 15"
+        },
+        {
+          "intent": "\\text{Finally, let us state the area}",
+          "hint": "\\text{Give the total number of square centimeters}",
+          "result": "36\\text{ cm}^{2}",
+          "example": "37\\text{ cm}^{2}"
+        }
+      ],
+      "teaching": {
+        "kind": "rectangle-area",
+        "submissionMode": false,
+        "shape": "square",
+        "task": "area",
+        "mobileOrientation": {
+          "orientation": "portrait",
+          "name": "Rectangle and Square Area"
+        },
+        "length": 6,
+        "width": 6,
+        "area": 36,
+        "rowLength": 6,
+        "rowCount": 6,
+        "unit": "cm",
+        "areaUnit": "cm²",
+        "language": {
+          "unitIntro": "A 1 cm × 1 cm tile covers one square centimetre. Area measures how many square units cover a flat shape, with no gaps or overlap.",
+          "rowPrompt": "How many square centimetres does one row cover?",
+          "rowsPrompt": "How many rows are needed?",
+          "squarePrompt": "What side length makes a square with this area?",
+          "totalPrompt": "What is the total area, in square centimetres?",
+          "stack": "Stack Up",
+          "check": "Check",
+          "ready": "Are you ready for the original question?",
+          "retry": "No, try again",
+          "continue": "Yes, I’m ready",
+          "numberArea": "Enter a number of square centimetres.",
+          "numberSide": "Enter a side length in centimetres.",
+          "numberRows": "Enter a number of rows.",
+          "wrongSquare": "Try a side length that gives the target area when multiplied by itself.",
+          "wrongRows": "Each row covers {length} cm². How many such rows cover {area} cm²?",
+          "wrong": "Try again. Count the square units and use equal rows.",
+          "correct": "Correct.",
+          "unknown": "The missing side has not been drawn yet.",
+          "areaTarget": "Target area: {area} cm²",
+          "squareDetails": "Target: {area} cm². The number of squares across must equal the number of rows.",
+          "rowDetails": "It is {length} cm long and 1 cm high.",
+          "knownRows": "The shape is {width} cm high. Each row is 1 cm high.",
+          "unknownRows": "The target area is {area} cm². One row covers {length} cm².",
+          "stackSquare": "Drop slabs of {length} squares to build {width} equal rows. Both sides must be the same length.",
+          "stackRows": "Drop copies of your slab edge to edge to cover the rectangle.",
+          "finished": "You have built the shape. Return to the question and enter your answer.",
+          "return": "Return to the question",
+          "again": "Replay Tetris",
+          "gameTitle": "Area Tetris",
+          "gameLabel": "Area Tetris: build a slab, then stack slabs",
+          "back": "Back to the question",
+          "buildSquare": "Build a square",
+          "buildRow": "Build a row",
+          "gridDescription": "{columns} squares per row, {filled} of {rows} rows filled. Each square covers 1 square centimetre.",
+          "dimensions": "{columns} cm across · {rows} cm high",
+          "rowGroups": " The row is grouped as {groups} squares.",
+          "stackProgress": "{chunk} rows add {chunkArea} cm². {filled} rows cover {covered} cm².",
+          "areaEquation": "{length} × {width} = {area} cm²",
+          "squareEquation": "{length} × {length} = {area}. Each side is {length} cm.",
+          "sideEquation": "{area} ÷ {length} = {width}. The missing side is {width} cm.",
+          "bandsEquation": "Groups of ten rows: {bands}; single rows: {singles}. Area: {bandArea} + {singleArea} = {area} cm².",
+          "buildSlab": "Step 1: build one slab",
+          "dropSquare": "Drop square",
+          "assembleRow": "Assemble row",
+          "slabReady": "Slab ready",
+          "playTetris": "Play Tetris",
+          "replayTetris": "Replay Tetris",
+          "dropSlab": "Drop slab",
+          "dropTenRows": "Drop 10-row band",
+          "buildProgress": "{filled} of {length} square pieces assembled",
+          "slabDetails": "Each falling square covers 1 cm². Assemble {length} squares into one slab.",
+          "slabReadyDetails": "Your slab is {length} cm long and 1 cm high. It covers {length} cm².",
+          "removeSquare": "Remove square",
+          "autoBuild": "Build slab",
+          "assemblyInstruction": "Drop square pieces into the row to assemble your first slab.",
+          "rowCheck": "How many square centimetres are in your slab?",
+          "rowsInstruction": "How many copies of this slab cover the rectangle?",
+          "squareSideInstruction": "Build one side from square pieces, then stack the same number of whole slabs.",
+          "rangeError": "Enter a whole number from 1 to 50.",
+          "retryStack": "Try stacking again",
+          "underRows": "Your stack is too short. Try more rows.",
+          "overRows": "Your stack is too tall. Try fewer rows.",
+          "squareMismatch": "This square covers {covered} cm². The target is {area} cm². Try another side length.",
+          "tenBandIntro": "Ten copies of your slab make a band covering {bandArea} cm².",
+          "documentTitle": "Build the area with Tetris",
+          "solutionTitle": "Tetris: worked solution",
+          "stackSlabs": "Step 2: stack whole slabs",
+          "unitLegend": "One square piece = 1 cm × 1 cm = 1 cm².",
+          "assemblyTarget": "Build one slab {length} cm long from 1 cm² squares",
+          "stackTarget": "Stack slabs to make a rectangle {width} cm high",
+          "missingTarget": "Stack slabs to cover {area} cm²",
+          "squareTarget": "Build equal sides to cover {area} cm²",
+          "assemblyEmpty": "Add square pieces to build a slab.",
+          "stackEmpty": "Add slabs to the stack.",
+          "oneSlabReady": "One slab is ready. Now stack copies of it.",
+          "squareInstruction": "First build one side from square pieces. Then add whole slabs to cover the square.",
+          "plusSquares": "Add one square piece",
+          "minusSquares": "Remove square pieces",
+          "plusSlabs": "Add one slab",
+          "minusSlabs": "Remove rows",
+          "playPrompt": "Let’s play Tetris to find the answer.",
+          "letsPlay": "Let’s play",
+          "stepOneTarget": "Step 1 of 2: build a slab of {length} squares",
+          "stepOneInstruction": "Press + to drop one square. Place {length} squares side by side.",
+          "bundledInstruction": "You’ve made one slab of {length} squares. Now add {width} such slabs to make {length} × {width} = {area} square units.",
+          "stepTwoTarget": "Step 2 of 2: stack {width} slabs",
+          "stepTwoInstruction": "Each slab contains {length} squares. Press + to add one whole slab.",
+          "bundleLabel": "1 slab = {length} squares",
+          "bundleNext": "Your slab is bundled. Press + to start stacking copies.",
+          "inverseStepOneTarget": "Step 1 of 2: build the first side of the square",
+          "inverseStepOneInstruction": "The square covers {area} cm². Add square pieces to build one side.",
+          "inverseBundledInstruction": "You’ve made a slab of {length} squares. Stack matching slabs to cover {area} cm².",
+          "inverseStepTwoTarget": "Step 2 of 2: stack slabs to cover {area} cm²"
+        },
+        "difficulty": {
+          "level": "low",
+          "descriptions": [
+            "Sides up to 10 cm; paint the strips.",
+            "Sides up to 20 cm; paint the strips.",
+            "Sides up to 40 cm; paint the strips.",
+            "How many strips? Enter the missing factor; the area is calculated for you.",
+            "Multiply: enter the area, then paint your answer."
+          ]
+        }
+      }
+    }
+  ]
+}

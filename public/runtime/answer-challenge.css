@@ -1,0 +1,112 @@
+.answer-challenge { --challenge-blue:#183b56; color:#202020; }
+.challenge-form { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px; margin:16px 0; }
+.challenge-question { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:12px; font-size:20px; }
+.challenge-input { box-sizing:border-box; width:110px; max-width:100%; border:2px solid #526c80; border-radius:8px; padding:10px; background:white; color:#183b56; font:700 24px Roboto,Arial,sans-serif; text-align:center; }
+.challenge-input:focus-visible,.challenge-tile:focus-visible,.challenge-drop:focus-visible { outline:3px solid #2379c4; outline-offset:3px; }
+.challenge-feedback { scroll-margin:85px 0 100px; text-align:center; font-size:20px; font-weight:700; border-radius:8px; padding:12px; margin:16px 0; }
+.challenge-feedback:empty { display:none; }
+.challenge-feedback[data-correct="false"] { color:#a51c25; background:#ffe7e9; border:2px solid #cc3240; }
+.challenge-feedback[data-correct="true"] { color:#21622d; background:#e7f5e9; border:2px solid #358445; }
+.challenge-tiles { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:16px 0; }
+.challenge-tile { padding:10px 14px; border:2px solid #8aa1b3; border-radius:8px; color:#183b56; background:#f1f6fa; font:inherit; cursor:grab; max-width:100%; overflow-wrap:anywhere; }
+.challenge-tile[aria-pressed="true"] { border-color:#244e73; background:#dbe9f5; }
+.challenge-drop { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px; min-height:80px; padding:16px; border:2px dashed #6a859b; border-radius:10px; }
+.challenge-drop .challenge-tile { cursor:pointer; }
+.challenge-equation-sign { font-size:28px; font-weight:700; }
+.challenge-instruction { text-align:center; }
+@media(max-width:650px) {
+ .challenge-question { font-size:18px; }
+ .challenge-feedback { scroll-margin:85px 0 100px; font-size:18px; }
+ .challenge-drop { padding:10px; }
+}
+
+/* Only the new entry controls and submitted-answer feedback extend Tetris. */
+.conversion-count-entry { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:10px; margin-top:16px; }
+.conversion-count-label { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:10px; }
+.conversion-count-entry .challenge-input { width:90px; color:#c65300; }
+.conversion-submission .challenge-feedback { font-size:18px; }
+.conversion-overflow { position:absolute; top:-28px; left:8%; width:84%; height:32px; z-index:3; }
+.conversion-target-frame .conversion-overflow .conversion-slab { height:32px; font-size:14px; }
+.conversion-overfilled { border-color:#c62828; }
+@media(max-width:650px) {
+ .conversion-submission .conversion-controls { display:flex; flex-direction:column; gap:8px; }
+ .conversion-submission .conversion-count-entry { margin-top:0; }
+ .conversion-submission .challenge-feedback { margin:0; padding:8px; font-size:16px; }
+}
+
+.conversion-retry-message { display:block; width:100%; box-sizing:border-box; font-family:inherit; cursor:pointer; }
+.conversion-retry-message:focus-visible { outline:3px solid #183b56; outline-offset:3px; }
+.conversion-mobile-retry { display:none; }
+@media screen and (max-width:650px) {
+ .conversion-submission .conversion-feedback .conversion-retry-message { visibility:hidden; }
+ .conversion-submission .conversion-controls:has(.conversion-mobile-retry:not([hidden])) > :not(.conversion-mobile-retry) { visibility:hidden; }
+ .conversion-submission .conversion-controls:has(.conversion-mobile-retry:not([hidden])) > .conversion-equation { visibility:hidden!important; }
+ .conversion-mobile-retry:not([hidden]) {
+  display:block; position:absolute; z-index:5; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:max-content; max-width:calc(100% - 24px); min-height:44px; box-sizing:border-box; padding:10px 16px;
+  border:2px solid #cc3240; border-radius:8px; background:#ffe7e9;
+  color:#a51c25; font:700 18px/1.4 Roboto,Arial,sans-serif; text-align:center; cursor:pointer;
+ }
+ .conversion-mobile-retry:focus-visible { outline:3px solid #a51c25; outline-offset:-4px; }
+}
+
+.conversion-submission { --conversion-entry-height:52px; }
+.conversion-submission .conversion-count-entry .challenge-input,
+.conversion-submission .conversion-count-entry .paper-button {
+ box-sizing:border-box;
+ height:var(--conversion-entry-height);
+ min-height:var(--conversion-entry-height);
+ padding-block:4px;
+}
+.conversion-submission .conversion-retry-message { line-height:1.2; }
+
+/* Keep the result slot in the layout through entry, stacking and retry. */
+.conversion-submission .conversion-feedback {
+ min-height:48px;
+ margin:20px 0 0;
+ width:100%;
+}
+.conversion-submission .conversion-feedback .challenge-feedback {
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ box-sizing:border-box;
+ height:100%;
+ margin:0;
+ padding:0;
+ border:0;
+ background:transparent;
+ font:400 1rem/1.25 Roboto,Arial,sans-serif;
+ color:#a51c25;
+}
+.conversion-submission .conversion-feedback [data-correct="true"] { color:#21622d; }
+.conversion-submission .conversion-feedback .conversion-retry-message {
+ width:fit-content;
+ max-width:100%;
+ min-height:44px;
+ margin-inline:auto;
+ padding:10px 16px;
+ border:2px solid #cc3240;
+ border-radius:8px;
+ background:#ffe7e9;
+ color:#a51c25;
+ font:700 18px/1.4 Roboto,Arial,sans-serif;
+}
+.conversion-submission .conversion-equation { font-variant-numeric:tabular-nums; }
+.conversion-submission .conversion-count-entry .paper-button { transition:color 180ms, opacity 180ms; }
+@media(max-width:650px) {
+ .conversion-submission { --conversion-entry-height:44px; }
+ .conversion-submission .conversion-controls { display:grid; grid-template-columns:minmax(0,1fr); gap:4px; }
+ .questionnaire .paper-teaching .conversion-submission .conversion-controls { padding-top:16px; padding-bottom:calc(16px + env(safe-area-inset-bottom)); }
+ .conversion-submission .conversion-controls .conversion-equation { grid-column:1; grid-row:1; font-size:clamp(24px,7vw,32px); }
+ .conversion-submission .conversion-controls .conversion-equation[aria-hidden="true"] { display:none; }
+ .conversion-submission .conversion-count-entry { grid-column:1; grid-row:auto; flex-wrap:nowrap; gap:6px; }
+ .conversion-submission .conversion-count-entry .conversion-factor-answer { width:64px; min-width:0; }
+ .conversion-submission .conversion-count-entry .paper-button { padding-inline:10px; font-size:1rem; }
+ /* Feedback no longer reserves a row below the entry controls on mobile. */
+ .conversion-submission .conversion-feedback { position:absolute; bottom:100%; left:0; margin:0; pointer-events:none; }
+ .conversion-submission .conversion-feedback .challenge-feedback:not(.conversion-retry-message) { background:white; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .conversion-submission .conversion-count-entry .paper-button { transition:none; }
+}

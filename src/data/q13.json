@@ -1,0 +1,126 @@
+{
+  "strategy": "Multiply once for each smaller unit.",
+  "questions": [
+    {
+      "category": "multiply_conversion_chain",
+      "question": "There are 2 packs of ribbon. Each pack contains 2 strips. Each strip is 4 m long. What is the total length of ribbon in m?",
+      "questionFormat": "text",
+      "answer": "16",
+      "example": "24",
+      "template": "{example}\\text{ m}",
+      "steps": [
+        {
+          "intent": "Convert to strips",
+          "hint": "Multiply 2 by 2 to find the number of strips.",
+          "result": "2 \\times 2 = 4\\text{ strips}",
+          "example": "3 \\times 2 = 6\\text{ strips}"
+        },
+        {
+          "intent": "Convert to m",
+          "hint": "Multiply 4 by 4 to find the number of m.",
+          "result": "4 \\times 4 = 16\\text{ m}",
+          "example": "6 \\times 4 = 24\\text{ m}"
+        }
+      ],
+      "choices": [
+        "16",
+        "4",
+        "20",
+        "18"
+      ],
+      "correctChoice": 0,
+      "tags": [
+        "measurement",
+        "unit-conversion",
+        "multiplication",
+        "conversion-chain"
+      ],
+      "source": "",
+      "portableQuestion": {
+        "formatVersion": 1,
+        "quode": "measurement-conversion_chain",
+        "generatorVersion": "1.0",
+        "question": "There are 2 packs of ribbon. Each pack contains 2 strips. Each strip is 4 m long. What is the total length of ribbon in m?",
+        "questionFormat": "text",
+        "math": "2 * 2 * 4",
+        "data": {
+          "amount": 2,
+          "factors": [
+            2,
+            4
+          ],
+          "units": [
+            "packs",
+            "strips",
+            "m"
+          ],
+          "wording": 3
+        },
+        "difficulty": "low",
+        "choices": [
+          "16",
+          "4",
+          "20",
+          "18"
+        ],
+        "tags": [
+          "measurement",
+          "unit-conversion",
+          "multiplication",
+          "conversion-chain"
+        ],
+        "source": ""
+      },
+      "teaching": {
+        "module": "teaching.js",
+        "highlightQuantities": false,
+        "hideInstruction": true,
+        "helpPresentation": "inline",
+        "submissionMode": false,
+        "amount": 2,
+        "factors": [
+          2,
+          4
+        ],
+        "units": [
+          "packs",
+          "strips",
+          "m"
+        ],
+        "wording": 3,
+        "totals": [
+          2,
+          4,
+          16
+        ],
+        "showBricks": true,
+        "copy": {
+          "check": "Check",
+          "next": "Add next layer",
+          "back": "Back to question",
+          "correct": "Correct.",
+          "wrong": "Try again.",
+          "done": "All layers complete. Now answer the question.",
+          "challenge": "Enter the final total.",
+          "retry": "Build again"
+        },
+        "answerUnit": "m",
+        "answerWidthDigits": 4,
+        "mobileOrientation": {
+          "orientation": "landscape",
+          "name": "Conversion Brick Layers"
+        },
+        "difficulty": {
+          "level": "low",
+          "descriptions": [
+            "Level 1 \u00b7 Three small-number layers",
+            "Level 2 \u00b7 Larger starting amount, single-digit factors",
+            "Level 3 \u00b7 Four or five small-number layers",
+            "Level 4 \u00b7 Large numbers, steps only",
+            "Level 5 \u00b7 Answer first; hints after an error"
+          ]
+        }
+      }
+    }
+  ]
+}

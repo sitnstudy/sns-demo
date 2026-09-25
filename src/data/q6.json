@@ -1,0 +1,387 @@
+{
+  "strategy": "A percentage means out of one hundred. Divide the percentage by 100, then multiply by the original quantity.",
+  "questions": [
+    {
+      "category": "percentage_of_quantity",
+      "question": "A middle school has 50 students enrolled in after-school clubs. If 20% of those students participate in the robotics club, how many students participate in robotics?",
+      "answer": "10",
+      "example": "11",
+      "template": "{example}",
+      "steps": [
+        {
+          "intent": "\\text{First, let's express the percentage as a part of one hundred}",
+          "hint": "\\text{Write the percentage over 100}",
+          "result": "\\frac{20}{100}",
+          "example": "\\frac{21}{100}"
+        },
+        {
+          "intent": "\\text{Now, let's find that part of the original total}",
+          "hint": "\\text{Multiply the fraction by the original total}",
+          "result": "\\frac{20}{100} \\times 50",
+          "example": "\\frac{21}{100} \\times 51"
+        },
+        {
+          "intent": "\\text{Finally, let's calculate the requested quantity}",
+          "hint": "\\text{Multiply, then divide by 100}",
+          "result": "10",
+          "example": "11"
+        }
+      ],
+      "choices": [
+        "100",
+        "0.5",
+        "40",
+        "10"
+      ],
+      "correctChoice": 3,
+      "tags": [
+        "arithmetic",
+        "percentage",
+        "quantity",
+        "percent-of-a-number"
+      ],
+      "source": "",
+      "questionFormat": "text",
+      "portableQuestion": {
+        "formatVersion": 1,
+        "quode": "arithmetic-percentage_of_quantity",
+        "generatorVersion": "1.2",
+        "question": "A middle school has 50 students enrolled in after-school clubs. If 20% of those students participate in the robotics club, how many students participate in robotics?",
+        "questionFormat": "text",
+        "data": {
+          "total": 50,
+          "percent": "20",
+          "level": 1,
+          "template": "school_club"
+        },
+        "choices": [
+          "100",
+          "0.5",
+          "40",
+          "10"
+        ],
+        "tags": [
+          "arithmetic",
+          "percentage",
+          "quantity",
+          "percent-of-a-number"
+        ],
+        "source": "",
+        "answerProfile": "positive",
+        "recipe": {
+          "args": [
+            "--count",
+            "1",
+            "--difficulty",
+            "low",
+            "--digits",
+            "2",
+            "2",
+            "--seed",
+            "1"
+          ],
+          "index": 0
+        }
+      },
+      "teaching": {
+        "kind": "percentage-cannon",
+        "helpPresentation": "immersive",
+        "submissionMode": false,
+        "mobileOrientation": {
+          "orientation": "landscape",
+          "name": "Percentage of a Quantity"
+        },
+        "difficulty": {
+          "level": "low",
+          "descriptions": [
+            "Level 1: common percentages with whole-number answers",
+            "Level 2: other whole-number percentages with whole-number answers",
+            "Level 3: whole-number percentages with decimal answers",
+            "Level 4: fractional percentages in half-percentage-point steps",
+            "Level 5: independently enter the amount before seeing the calculation"
+          ]
+        },
+        "percentage": {
+          "total": 50,
+          "targetPercent": "20",
+          "step": "1",
+          "level": 1,
+          "mode": "guided",
+          "unit": "students"
+        },
+        "levels": [
+          {
+            "level": 1,
+            "targets": [
+              "10",
+              "20",
+              "25",
+              "50",
+              "75"
+            ],
+            "step": "1",
+            "name": "Common percentages",
+            "questions": [
+              [
+                20,
+                "10"
+              ],
+              [
+                40,
+                "25"
+              ],
+              [
+                80,
+                "75"
+              ],
+              [
+                170,
+                "10"
+              ]
+            ]
+          },
+          {
+            "level": 2,
+            "targets": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "21",
+              "22",
+              "23",
+              "24",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40",
+              "41",
+              "42",
+              "43",
+              "44",
+              "45",
+              "46",
+              "47",
+              "48",
+              "49",
+              "51",
+              "52",
+              "53",
+              "54",
+              "55",
+              "56",
+              "57",
+              "58",
+              "59",
+              "60",
+              "61",
+              "62",
+              "63",
+              "64",
+              "65",
+              "66",
+              "67",
+              "68",
+              "69",
+              "70",
+              "71",
+              "72",
+              "73",
+              "74",
+              "76",
+              "77",
+              "78",
+              "79",
+              "80",
+              "81",
+              "82",
+              "83",
+              "84",
+              "85",
+              "86",
+              "87",
+              "88",
+              "89",
+              "90",
+              "91",
+              "92",
+              "93",
+              "94",
+              "95",
+              "96",
+              "97",
+              "98",
+              "99"
+            ],
+            "step": "1",
+            "name": "Whole percentages",
+            "questions": [
+              [
+                200,
+                "13"
+              ],
+              [
+                100,
+                "37"
+              ],
+              [
+                300,
+                "17"
+              ],
+              [
+                500,
+                "89"
+              ]
+            ]
+          },
+          {
+            "level": 3,
+            "targets": [
+              "1",
+              "7",
+              "13",
+              "17",
+              "23",
+              "37",
+              "63",
+              "89"
+            ],
+            "step": "1",
+            "name": "Decimal amounts",
+            "questions": [
+              [
+                86,
+                "13"
+              ],
+              [
+                170,
+                "1"
+              ],
+              [
+                73,
+                "17"
+              ],
+              [
+                91,
+                "37"
+              ]
+            ]
+          },
+          {
+            "level": 4,
+            "targets": [
+              "2.5",
+              "12.5",
+              "17.5",
+              "22.5",
+              "37.5",
+              "62.5",
+              "87.5"
+            ],
+            "step": "0.5",
+            "name": "Fractional percentages",
+            "questions": [
+              [
+                70,
+                "12.5"
+              ],
+              [
+                86,
+                "2.5"
+              ],
+              [
+                54,
+                "37.5"
+              ]
+            ]
+          },
+          {
+            "level": 5,
+            "targets": [
+              "1",
+              "10",
+              "13",
+              "17",
+              "25",
+              "37",
+              "50",
+              "75",
+              "12.5",
+              "37.5"
+            ],
+            "step": "0.5",
+            "name": "Your turn",
+            "questions": [
+              [
+                170,
+                "10"
+              ],
+              [
+                86,
+                "13"
+              ],
+              [
+                70,
+                "12.5"
+              ],
+              [
+                200,
+                "17"
+              ]
+            ]
+          }
+        ],
+        "labels": {
+          "objective": "Find {percent}% of {total}",
+          "total": "Total: {total} bricks = 100%",
+          "statement": "{percent}% of {total} = {amount}",
+          "calculation": "{percent}/100 × {total} = {amount}",
+          "fire": "FIRE",
+          "reset": "Reset",
+          "next": "Next Question",
+          "answer": "How many units?",
+          "tooLittle": "Too little.",
+          "tooMuch": "Too much.",
+          "success": "Correct!",
+          "tryAgain": "Try Again",
+          "orientation": "Move to landscape mode",
+          "ready": "Ready for the original question?",
+          "objectiveBlocks": "Colour {percent}% of {total} blocks",
+          "objectiveMaterial": "Find {percent}% of {total} units",
+          "answerPrompt": "How many units?",
+          "correct": "Correct!",
+          "retryHint": "Adjust the percentage and fire again.",
+          "successHint": "Try another question or return to the question.",
+          "documentHint": "{percent}% means {percent} out of every 100.",
+          "independentFeedback": "Your answer: {answer}. Correct amount: {correct}.",
+          "excess": "Your answer exceeds the wall by {excess} units."
+        }
+      }
+    }
+  ]
+}

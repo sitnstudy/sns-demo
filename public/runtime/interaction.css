@@ -1,0 +1,34 @@
+/* Shared by every hosted page, including archived and future Quode players. */
+* {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+:focus,
+:focus-visible,
+:focus-within,
+button,
+a,
+input,
+select,
+textarea,
+summary,
+math-field,
+[tabindex],
+[role="button"],
+[contenteditable],
+[data-keyboard-active],
+.paper-choice-letter {
+  outline: none !important;
+  outline-offset: 0 !important;
+}
+
+:is(button, a, input, select, textarea, summary, math-field, [tabindex], [role="button"], [contenteditable]):is(:focus, :focus-visible, :focus-within, [data-keyboard-active="true"]) {
+  box-shadow: none !important;
+}
+
+math-field::part(container),
+math-field::part(content),
+math-field::part(keyboard-sink) {
+  outline: none !important;
+  box-shadow: none !important;
+}

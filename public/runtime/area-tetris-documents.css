@@ -1,0 +1,37 @@
+.area-tetris-document {width:100%;min-width:0;break-inside:avoid;}
+.area-doc-legend {display:flex;align-items:center;gap:10px;font-size:14px;line-height:1.5;}
+.area-doc-legend .area-doc-piece {display:block;width:25px;height:25px;flex:none;}
+.area-doc-diagrams {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;margin:16px 0;}
+.area-doc-stage {min-width:0;}
+.area-doc-stage h4 {margin:0 0 12px;color:var(--psat-primary);font-size:16px;}
+.area-doc-figure {margin:0;min-width:0;}
+.area-tetris-document .area-doc-well {width:100%;height:210px;min-width:0;overflow:hidden;position:relative;}
+.area-doc-piece,.area-doc-well .area-doc-piece {--brick-colour:#00bcd4;background:linear-gradient(180deg,#ffffff70 0%,#ffffff15 45%,#00000012 48%,#00000038 100%),var(--brick-colour);border:1px solid #ffffff75;border-radius:3px;box-shadow:inset 3px 3px 0 #ffffff55,inset -3px -3px 0 #00000035;box-sizing:border-box;}
+.area-doc-tray {position:absolute;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(var(--doc-columns),minmax(0,1fr));}
+.area-doc-well .area-doc-tray .area-doc-piece {aspect-ratio:1;height:auto;min-height:0;max-height:none;}
+.area-doc-well .area-doc-ghost {opacity:.15;}
+.area-doc-well .area-doc-falling-square {position:absolute;bottom:33%;width:calc(100% / var(--doc-columns));height:auto;aspect-ratio:1;}
+.area-doc-drop-arrow {position:absolute;left:72%;bottom:37%;font-size:36px;color:white;}
+.area-doc-wordmark {top:15%;font-size:clamp(23px,3vw,34px);}
+.area-doc-shape {position:absolute;left:50%;bottom:0;transform:translateX(-50%);border:1px dashed #89a3c1;box-sizing:border-box;}
+.area-doc-well .area-doc-row {position:absolute;left:0;width:100%;min-height:0;display:flex;border-radius:2px;padding:0;background-image:linear-gradient(180deg,#ffffff70,#ffffff15 45%,#00000012 48%,#00000038);outline:1px solid #d7edff;outline-offset:-1px;}
+.area-doc-cell {background:linear-gradient(180deg,#ffffff70,#ffffff15 45%,#00000012 48%,#00000038),var(--brick-colour);flex:1;align-self:stretch;border-right:1px solid #ffffff75;min-width:0;box-sizing:border-box;}
+.area-doc-cell:last-child {border-right:0;}
+.area-doc-cell.area-doc-tenth {border-right:2px solid #10233d;}
+.area-doc-band-label {position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;font-size:11px;padding:2px 4px;background:#10233d;color:white;border-radius:2px;}
+.area-doc-well .area-doc-falling-row {top:8%;}
+.area-doc-stack-arrow {position:absolute;top:8px;left:47%;font-size:32px;color:white;}
+.area-doc-caption,.area-doc-grouping,.area-doc-dimension {font-size:13px;line-height:1.4;margin:9px 0 0;overflow-wrap:anywhere;}
+.area-doc-dimension {font-weight:700;color:var(--psat-primary);}
+.area-doc-grouping {font-size:12px;color:#42566b;}
+.area-doc-equations {border-top:1px solid #ccd6df;margin-top:14px;padding-top:8px;}
+.area-doc-equations p {margin:7px 0;line-height:1.5;}
+.area-doc-instruction {font-size:14px;line-height:1.5;}
+.area-doc-replay {border:0;border-radius:24px;background:#2e7d32;color:#fff;padding:12px 22px;min-height:48px;font:inherit;cursor:pointer;}
+@media screen and (max-width:500px) {.area-doc-diagrams {grid-template-columns:minmax(0,1fr);gap:22px;}.area-tetris-document .area-doc-well {max-width:300px;margin-inline:auto;}.area-doc-figure {text-align:center;}}
+@media print {.area-doc-diagrams {grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin:10px 0;}.area-tetris-document .area-doc-well {height:175px;box-shadow:inset 0 0 18px #050b19,0 5px 0 #0c2032;}.area-tetris-document,.area-doc-piece,.area-doc-well {print-color-adjust:exact;-webkit-print-color-adjust:exact;}.area-doc-replay {display:none!important;}.area-doc-stage h4 {font-size:14px;margin-bottom:8px;}.area-doc-caption,.area-doc-dimension {font-size:11px;}.area-doc-instruction {font-size:12px;}.area-doc-equations p {margin:4px 0;}.area-doc-legend {font-size:12px;}}
+
+.area-doc-bundle-example {display:grid;grid-template-columns:repeat(var(--doc-columns),minmax(0,1fr));margin:12px auto 0;outline:2px solid #183b56;outline-offset:2px;border-radius:2px;box-sizing:border-box;background:#10233d;}
+.area-doc-bundle-example .area-doc-piece {aspect-ratio:1;min-height:0;height:auto;border-radius:1px;}
+.area-doc-bundle-label {margin:8px 0 0;text-align:center;font-size:12px;font-weight:700;color:var(--psat-primary);}
+@media print {.area-doc-bundle-example {margin-top:8px;}.area-doc-bundle-label {font-size:10px;}}

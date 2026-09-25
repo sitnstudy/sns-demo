@@ -1,0 +1,85 @@
+.chain-help{position:relative;display:grid;grid-template-columns:minmax(350px,1fr) minmax(0,1.2fr);gap:28px;padding:4rem 0 12px;color:var(--psat-primary,#193d54);font-family:Roboto,Arial,sans-serif;align-items:start}
+.chain-work{min-width:0;max-height:600px;overflow:auto;overscroll-behavior:contain;padding:0 8px 8px 0;scrollbar-width:none}
+.chain-work::-webkit-scrollbar{display:none}
+.chain-main{min-width:0;align-self:start;padding-top:26px}
+.chain-close{position:absolute;top:4px;right:4px;display:grid;place-items:center;width:44px;height:44px;padding:10px;border:0;background:transparent;color:#c62828;cursor:pointer;z-index:2}
+.chain-close svg{width:24px;height:24px}
+.chain-step{margin-bottom:12px}.chain-rule{font-size:19px;font-weight:700;line-height:1.45;margin:0 0 10px}
+.chain-equation{font-size:24px;line-height:36px;font-weight:700;margin:0;white-space:nowrap}
+.chain-entry{display:flex;align-items:center;gap:6px;min-width:0}
+.chain-entry .mathlive-answer-field{box-sizing:border-box;width:82px;min-width:60px;max-width:110px;height:36px;min-height:36px;max-height:36px;font-size:24px;padding:0 4px}
+.chain-unit{font-size:17px;font-weight:400}.chain-controls{display:flex;justify-content:flex-end;margin-top:8px}
+.chain-controls .paper-button{height:36px;min-height:36px;padding:4px 14px;font-size:15px}
+.chain-feedback{font-size:14px;margin:6px 0;line-height:1.4}.chain-feedback:empty{display:none}.chain-feedback[data-correct=false]{color:#c62828}
+.chain-keypad-slot{display:flex;justify-content:flex-start;margin-top:8px;min-width:0;padding-left:var(--chain-answer-offset,0px)}
+
+
+
+
+
+.chain-wall{margin:0;display:flex;flex-direction:column;gap:0}
+.chain-layer{display:grid;grid-template-columns:minmax(0,1fr) 64px;align-items:center;gap:6px;--brick:#ac542e;--light:#d8824f}
+.chain-layer[data-layer="1"]{--brick:#377f99;--light:#6bb6ca}.chain-layer[data-layer="2"]{--brick:#6c8b40;--light:#a5bc6b}.chain-layer[data-layer="3"]{--brick:#8662a2;--light:#b697ce}.chain-layer[data-layer="4"]{--brick:#b3842b;--light:#e1bc65}
+.chain-label{font-size:12px;font-weight:700;text-align:left}
+.chain-strip{height:40px;display:grid;gap:0;background:transparent;overflow:visible;filter:drop-shadow(0 1px 1px #193d5440)}
+.chain-brick{min-width:0;box-sizing:border-box;border:1px solid #f7f4ed;background:var(--brick);border-radius:0;box-shadow:inset 0 3px 2px var(--light),inset 0 -4px 2px #0003}
+.chain-no-figure{grid-template-columns:minmax(0,700px);justify-content:center}.chain-no-figure .chain-main{display:none}
+.chain-complete{font-weight:700}.chain-document{break-inside:avoid}
+.chain-document>p{font-size:24px;line-height:1.5}
+@media screen and (max-width:1000px) and (orientation:landscape){
+ body:has(.chain-help){overflow:hidden}
+ body:has(.chain-help) :is(.paper-heading-with-layout,.paper-footer,.psat-build){visibility:hidden}
+ .chain-help{position:fixed;inset:0;z-index:1200;background:white;padding:52px 16px;gap:16px;grid-template-columns:minmax(320px,1fr) minmax(0,1.2fr);align-content:safe center;overflow:auto}
+ .chain-work{height:auto;max-height:calc(100dvh - 104px);padding-right:6px}
+ .chain-rule{font-size:17px;line-height:1.4}.chain-equation{font-size:22px}
+ .chain-strip{height:32px}.chain-label{font-size:11px}
+ .chain-main{padding-top:22px}.chain-no-figure{grid-template-columns:minmax(0,640px)}
+}
+@media(max-width:550px) and (orientation:portrait){.chain-help{grid-template-columns:1fr}.chain-main{grid-row:1}.chain-work{max-height:500px}}
+.chain-muted-prompt{color:#b0b0b0;font-weight:400}
+.chain-rule{color:var(--psat-primary,#193d54);font-weight:400}
+.chain-number{color:#1765bc;font-weight:700}
+.chain-quantity{color:var(--psat-primary,#193d54);font-weight:700}
+.chain-challenge{font-size:19px;font-weight:700}
+
+.chain-entry .paper-button{height:36px;min-height:36px;padding:4px 10px;font-size:15px;margin-left:6px}
+.chain-completed{margin-bottom:12px}
+.chain-rule{overflow:hidden}
+.chain-keypad-slot .compact-math-keypad-inline{position:static;margin-left:0;box-shadow:none}
+@media screen and (max-width:720px) and (orientation:landscape){
+ .chain-help{grid-template-columns:minmax(310px,1fr) minmax(0,1fr);gap:10px;padding-inline:12px}
+ .chain-entry{gap:4px}.chain-entry .mathlive-answer-field{width:65px;min-width:55px}
+ .chain-equation{font-size:20px}.chain-unit{font-size:16px}
+ .chain-entry .paper-button{padding-inline:8px}
+ .chain-layer{grid-template-columns:minmax(0,1fr) 55px;gap:4px}
+}
+@media screen and (max-width:720px) and (orientation:landscape){.chain-help.chain-no-figure{grid-template-columns:minmax(0,1fr)}}
+
+.chain-entry .paper-button{display:inline-flex;align-items:center;justify-content:center;line-height:1;text-align:center;flex-shrink:0}
+.chain-audio{position:absolute;top:4px;right:52px;width:44px;height:44px;border:0;background:transparent;color:var(--psat-primary,#193d54);font-size:24px;cursor:pointer}
+.chain-step-feedback{z-index:1400}
+body:has(.chain-help) .flower-celebration{z-index:1500}
+.chain-help .chain-number,.chain-help .chain-quantity{color:inherit}
+
+.chain-audio.conversion-audio-fab{position:fixed;top:auto;left:auto;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));transform:none;width:48px;height:48px;border:1px solid #ffffff55;border-radius:50%;background:linear-gradient(145deg,#285876,#183b56);color:white;visibility:visible;z-index:1300;padding:10px}
+.chain-audio.conversion-audio-fab svg{width:24px;height:24px}
+.chain-ready{position:static;inset:auto;width:fit-content;max-width:100%;margin:2rem 0 0;padding:14px 16px;border-radius:12px}
+.chain-ready:not([open]){display:block;visibility:hidden;pointer-events:none}
+.chain-ready>p{white-space:normal;font-size:16px;line-height:1.4;margin:0 0 12px}
+.chain-ready .conversion-ready-actions{display:inline-grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:max-content;max-width:100%}
+.chain-ready .conversion-ready-actions button{min-width:0;min-height:40px;padding:8px 12px;font-size:14px;line-height:1.2;white-space:nowrap}
+.chain-ready.quode-completion-dialog[open]{animation:chain-ready-in .2s ease-out}
+@keyframes chain-ready-in{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.chain-ready.quode-completion-dialog[open]{animation:none}}
+
+.paper-footer>.chain-audio.conversion-audio-fab{position:absolute;top:50%;bottom:auto;transform:translateY(-50%);box-shadow:none}
+
+.chain-step-hint{font-size:14px;margin:8px 0 0;line-height:1.4}
+
+/* Twelve numeric keys fit in two rows alongside the mobile brick diagram. */
+@media screen and (max-width:1000px){
+ .chain-keypad-slot{padding-left:0;min-height:124px}
+ .chain-keypad-slot .compact-math-keypad.digits-only{width:322px;max-width:100%;padding:8px}
+ .chain-keypad-slot .compact-keypad-digits{grid-template-columns:repeat(6,minmax(0,1fr))}
+ .chain-keypad-slot .compact-math-key{min-width:0;min-height:44px;padding:4px;order:var(--keypad-wide-order,20)}
+}
