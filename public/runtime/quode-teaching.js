@@ -15,7 +15,7 @@ export function mountQuodeTeaching(question, search) {
   const element = document.createElement('div'); element.className = 'paper-teaching';
   let instance, view, help = false, destroyed = false;
   element.setAttribute('aria-busy','true');
-  const ready = import(`/${encodeURIComponent(id)}/web/teaching.js`).then(module => {
+  const ready = import(new URL(`../${encodeURIComponent(id)}/web/teaching.js`, import.meta.url).href).then(module => {
     if (destroyed) return;
     instance = module.mountTeaching(question,element);
     if (view) instance.setView(view);

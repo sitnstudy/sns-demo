@@ -13,7 +13,7 @@ export default function QuestionPlayer({ onComplete }: { onComplete: () => void 
     let mounted = true;
     let player: { destroy(): void } | undefined;
 
-    const runtimeUrl = '/runtime/questionnaire.js';
+    const runtimeUrl = new URL('runtime/questionnaire.js', document.baseURI).href;
     import(/* @vite-ignore */ runtimeUrl).then(({ mountQuestionnaire }) => {
       if (!mounted || !host.current) return;
       player = mountQuestionnaire(host.current, {

@@ -1,8 +1,8 @@
-import { dockGameAudio } from '/runtime/game-audio-control.js';
-import { createCannonAudio } from '/runtime/cannon-effects.js';
-import { createStepFeedback } from '/runtime/step-feedback.js';
-import { createFlowerCelebration } from '/runtime/flower-celebration.js';
-import { mountMathInput } from '/runtime/math-input.js';
+import { dockGameAudio } from '../../runtime/game-audio-control.js';
+import { createCannonAudio } from '../../runtime/cannon-effects.js';
+import { createStepFeedback } from '../../runtime/step-feedback.js';
+import { createFlowerCelebration } from '../../runtime/flower-celebration.js';
+import { mountMathInput } from '../../runtime/math-input.js';
 const styleURL = new URL('./bricks.css', import.meta.url).href;
 if (![...document.querySelectorAll('link')].some(link => link.href === styleURL)) {
   const link = document.createElement('link'); link.rel = 'stylesheet'; link.href = styleURL;

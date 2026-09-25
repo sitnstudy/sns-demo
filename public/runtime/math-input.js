@@ -1,6 +1,6 @@
-import { MathfieldElement } from "/runtime/mathlive/mathlive.min.mjs";
+import { MathfieldElement } from "./mathlive/mathlive.min.mjs";
 
-MathfieldElement.fontsDirectory = "/runtime/katex/fonts";
+MathfieldElement.fontsDirectory = new URL('./katex/fonts', import.meta.url).href;
 MathfieldElement.soundsDirectory = null;
 MathfieldElement.keypressSound = null;
 MathfieldElement.plonkSound = null;

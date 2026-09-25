@@ -137,7 +137,7 @@ export function mountQuestionnaire(app, { title = 'Practice paper', questions, s
     return exercise.questions.find(candidate => candidate.question !== question.question) || exercise.questions[0];
   });
   if (!document.querySelector('link[data-questionnaire]')) {
-    const css = node('link'); css.rel = 'stylesheet'; css.href = '/runtime/questionnaire.css';
+    const css = node('link'); css.rel = 'stylesheet'; css.href = new URL('./questionnaire.css', import.meta.url).href;
     css.dataset.questionnaire = ''; document.head.append(css);
   }
   const options = presentationOptions(search);
@@ -770,14 +770,14 @@ export function mountQuestionnaire(app, { title = 'Practice paper', questions, s
     const brand = node('div', 'paper-brand');
     brand.hidden = !title.trim();
     const logo = node('img', 'paper-brand-icon');
-    logo.src = '/runtime/psat-icon-192.png?v=2'; logo.alt = ''; logo.width = 32; logo.height = 32;
+    logo.src = new URL('./psat-icon-192.png?v=2', import.meta.url).href; logo.alt = ''; logo.width = 32; logo.height = 32;
     const printHeading = node('header', 'paper-print-heading');
     const printLogo = logo.cloneNode(); printLogo.alt = 'PSAT';
     const printTitle = node('h1');
     printHeading.append(printLogo, printTitle);
     heading.after(printHeading);
     const homeLink = node('a', 'paper-home-link');
-    homeLink.href = location.pathname === '/' ? '/' : '/psat-player/';
+    homeLink.href = new URL('../', import.meta.url).href;
     homeLink.setAttribute('aria-label', 'Back to PSAT landing page');
     homeLink.title = 'Back to PSAT landing page';
     homeLink.append(logo);
